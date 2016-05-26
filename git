@@ -1,0 +1,113 @@
+/**
+*GIT TEMPLATE - derek banas
+*
+*/
+
+/*GIT cheat sheet
+http://www.newthinktank.com/2014/04/git-video-tutorial/
+
+/**Version Controls
+1. Local Version Control (saved in personal system);
+2. Centralized Version Control (saved in centralized server);
+3. Distributed Version Control (copies are saved in multiple servers);
+
+/**File transition between 3 stages
+1.Modified Files - recently changed files
+2.Staged Files - files marked to be saved
+3.Commited Files - have been saved
+
+/**Installing Git
+1. Windows: http://msysgit.github.io
+2. Mac: http://sourceforge.net/projects/git-osx-installer
+3. Linux: apt-get install git-core
+		  yum install git-core
+
+
+/**configure git in your system
+>git config --global user.name "Josh Kumar"
+>git config --global user.email joshk.bits@gmail.com
+
+//to change the core editor
+>git config --global core.editor "vim"
+
+//to see the settings
+>git config --list
+
+//in need of help 
+>git help
+
+//to see information on add command
+>git help add
+
+//to let git start saving certain files in a directory... go to that directory and ...
+>git init
+
+//to track specific files ... for example all java files
+>git add *.java
+
+//to track AndroidManifest.xml file
+>git add AndroidManifest.xml
+
+//to specifically ignore changes in some files create a file called .gitignore 
+//we can find the source code for ignoring in https://github.com/github/gitignore
+
+//to commit a file | -m is used to write directly to git without opening an editor
+>git commit -m 'initial project version'
+
+//to see the status of all the files in the folder not added to git as untracked | ignored files won't show up 
+>git status
+
+//to see what the change is in the files being tracked
+>git diff
+
+//to stage a modified AndroidManifest.xml file | this will track the file if not tracked yet
+>git add AndroidManifest.xml
+
+//to commit with an editor - 50 characters limit
+>git commit
+
+//to commit without staging and editing message in an editor
+>git commit -a -m 'added a new comment'
+
+//to remove a file from git and system | -f for force removal as the file is staged and this will remove the file from system as well
+>git rm -f removeText.txt
+
+//to remove the file from staging area but keep in the system
+>git rm --cached removeText.txt
+
+//to rename a file
+>git mv removeText.txt remove.txt
+
+//to see all commits in reverse chronological order
+>git log
+
+//if you wanna see the logs in one line
+>git log --pretty = oneline
+
+//to make it even more pretty | %h-hashcode | %an-person that made the changes | %ar-date that was changed | %s-first line of the comment
+>git log --pretty = format:"%h : %an : %ar : %s"
+
+//to see just the last two commits
+>git log -p -2
+
+//to see some abbreviated stats
+>git log --stat
+
+//to see what's changed in a week
+>git log --since = 1.weeks
+>git log --since = "2014-04-12"
+
+//to see changes by a particular author
+>git log --author = "Josh Kumar"
+
+//to see changes begore a certain date
+>git log --before = "2014-04-12"
+
+//to change the message of the prev commit
+>git log --ammend
+
+//to undo a staging without deleting the file from git or system
+>git reset HEAD remove.txt
+
+
+

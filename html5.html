@@ -1,0 +1,483 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<!-- to redirect to another url | this will wait 100 secs-->
+	<meta http-equiv="refresh" content="100; url=index.html">
+	<!-- provide description -->
+	<meta name="description" content="here the goes the description of the website that you are building, description can only have max of 200 characters"/>
+	<!-- provide keywords | all keywords goes in here, this helps search engines to realize the kind of data that is present in your webpage | there can only be a max of 1000 keywords -->
+	<meta name="keywords" content="html5 canvas, html5 tutorial, html5 doctype, html5 tags, html5 video, learn html5"/>
+	<!-- to tell search engines to index your webpage or index links in your webpage or archive your webpage -->
+	<meta name="robots" content="index, follow"/>
+	<script type="text/javascript" src="someJavascriptFile.js"></script>
+	<!-- define the default location for all the links on your page | make sure to put this tag before defining any other links-->
+	<base href="http://localhost:8080/html/"></base>
+	<!-- link to reference for stylesheet -->
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+	<!-- link for a icon on your browser tab | make sure to keep the file in base directory-->
+	<link rel="icon" href="favicon.ico">
+	<title>HTML5 template</title>
+	<!-- /**
+		 * to validate if the html has any errors ... check the code on
+		 * https://validator.w3.org/check
+		 */
+	-->
+</head>
+<body>
+	<!-- div should only be used for styling and not structuring of the webpage ... why? -->
+	<div id="wrapper">
+		<!-- in case the javascript is not enabled -->
+		<noscript>Please Enable Javascript</noscript>
+		<!--this is for highlighting text-->
+		<h1>change with a click</h1>
+		<!-- <p> tag gives two returns whereas <br> tag gives one return-->
+		<p>Twinkle Twinkle little star<br>how I wonder what you are<br>up above the world so high<br>like a diamond in the sky</p>
+		<!-- for a horizontal line use hl -->
+		<hl>
+		<!-- if you want to indent text use blockqoute | use cite attribute to give a citation-->
+		<blockquote cite="https://www.youtube.com/watch?v=kDyJN7qQETA">some random blockqoute text for template purpose</blockquote>
+		<!-- for putting your text inside a qoute -->
+		<q cite="http://wikipedia.org/html5">something here is in qoutes</q>
+		<!-- if you wanna keep the text as you typed i.e. it will preserve the whitespace | be wary of the character entities though-->
+		<pre>
+		somethings seems               right
+		and somethings just don't      left
+		</pre>
+		<!-- you can also type in code and pre tag will preserve the whitespace in it | use code tag to write the code -->
+		<pre>
+			<code>
+				import java.util.*;
+
+				class Solution{
+					public static void main(String args[]){
+						Scanner in = new Scanner(System.in);
+						int n = in.nextInt();
+						for(int i=0; i &lt n; i++){
+							System.out.print(n + " ");
+						}
+					}
+				}
+			</code>
+		</pre>
+		<img 	id="puppy" 
+				src="http://cdn1-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-2.jpg"
+				width="237"
+				height="178"
+				alt="bull pup"/><br>
+		<br>
+		<!-- these two for bold -->
+		<b>Bold</b><br>
+		<strong>Strong</strong><br>
+		<!-- these are for italic -->
+		<em>emphasis</em><br>
+		<i>italic</i><br>
+		<!--some more styling tags -->
+		<small>Small</small><br>
+		<ins>Insert/underline</ins><br>
+		<del>Delete/Strike</del><br>
+		<samp>Sample programming output</samp><br>
+		<br>
+
+		this is an abbreviation <abbr title="United States of America">USA</abbr><br>
+		<dfn>jump:</dfn>to push your knees on the ground to defy gravity for a moment<br>
+		<dfn title="to push your knees on the ground to defy gravity for a moment">jump</dfn>
+		<kbd>This is keyboard text</kbd>
+		<br><br>
+		<!-- find character entities here ... http://dev.w3.org/html5/html-author/charref -->
+		&cent;
+		&pound;
+		&yen;
+		&copy;
+		&reg;
+		&deg;
+		&frac14;
+		&frac12;
+		&frac34;
+		3&sup2;<br><br>
+
+		4<sup>2</sup><br>
+		CO<sub>2</sub><br>
+
+		<!-- to read from right to left-->
+		<bdo dir="rtl">arabic</bdo><br>
+		<!-- for pronunciation -->
+		<ruby>something<rt>sum thing</rt></ruby><br>
+
+		<!--hyperlinks-->
+		<a href="https://youtube.com" title="YouTube_Title">YouTube</a><br>
+		<a href="#pagebottom">goto bottom of page</a><br>
+		<a href="mailto:joshk.bits@gmail.com">mail josh</a><br>
+		<a href="javascript:toggleImage()">Toggle Image</a><br>
+		<br>
+		
+		<!-- use gimp tool to put hyperlinks to the images-->
+		<img 	id="puppy" 
+				src="http://cdn1-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-2.jpg"
+				width="237"
+				height="178"
+				alt="bull pup"
+				usemap="#map" /><br>
+		<map name="map">
+			<area shape="" coords="" alt="" href="" title=""/></area>
+			<area shape="" coords="" alt="" href="" title=""></area>
+		</map>
+
+		<!-- to embed any type of file in the html-->
+		<object data="SmallBusinessPresentation.pdf" type="application/pdf" width="750" height="400"></object>
+		<object data="html5.html" type="text/html" width="750" height="400"></object>
+		<object data=randomAudioFile.wav type="audio/x-wav">
+			<param name="autoplay" value="true"/>
+			<param name="controller" value="true">
+		</object>
+		<!-- other types of file formats 
+		application/msword : MS Doc File
+		application.x-java-applet : Java Applet
+		audio/mpeg : MP3s
+		image/png : PNGs
+		image/jpeg : JPEGs
+		image/gif : GIFs
+		image/svg+xml : SVG Vector images
+		text/plain : Text
+		video/mp4 : MP4s
+		video/x-msvideo : AVIs
+		video/x-msv-wmv : WMVs
+		video/quicktime : MOVs
+		-->
+
+		<!-- To embed other external resources -->
+		<iframe src="https://youtu.be/kDyJN7qQETA"
+		        width="560"
+		        height="315"
+		        allowfullscreen="">
+		</iframe>
+
+		<!-- To embed flash files-->
+		<embed src="http://www.itma.vt.edu/tech/flash.swf"
+		       pluginspage="http://www.macromedia.com/shockwave/download/"
+		       type="application/x-shockwave-flash"
+		       width="300"
+		       height="120"
+		       loop="false"
+		       quality="high">
+		</embed>
+
+		<!-- embed audio using audio tag... we can set attributes without values-->
+		<audio controls autoplay loop preload>
+			<source src="comingtotake.wav" type="audio/wav"/>
+			Browser doesn't support the audio tag
+		</audio>
+
+		<!-- embed video using video tag-->
+		<video controls autoplay loop preload>
+			<source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
+		</video>
+
+		<!-- DATA STRUCTURE WITH HTML5 -->
+		<header>
+			<a href="http://localhost/html5/html52.html">
+				<img id="websiteLogo"
+					 alt="New Think Tank Logo"
+				     src="C:\Users\Josh\Pictures\BITS_logo.png">
+			</a>
+			<h1>New Think Tank</h1>
+		</header>
+
+		<nav id="horzNav">
+			<p>
+				<a href="google.com">Google</a>
+				<a href="youtube.com">Youtube</a>
+				<a href="yahoo.com">Yahoo</a>	
+			</p>
+		</nav>
+
+		<main id="content">
+			<section>
+				<h2>Fun Fact</h2>	
+				<article>	
+					<h3>Tomato Fact</h3>
+					<p>The tomato (see pronunciation) is the edible, often red berry-type fruit of Solanum lycopersicum,[1][2] commonly known as a tomato plant, which belongs to the nightshade family, Solanaceae.[3] The species originated in Central and South America. The Nahuatl (Aztec language) word tomatl gave rise to the Spanish word "tomate", where the English word tomato comes from. Its many varieties are widely grown, sometimes in greenhouses in cooler climates. The plants typically grow to 1–3 meters (3–10 ft) in height and have a weak stem that often sprawls over the ground and vines over other plants.</p>
+					
+					<!-- aside is used for content which is related but needs to be seperated -->
+					<aside> It is a perennial in its native habitat, and grown as an annual in temperate climates. An average common tomato weighs approximately 100 grams (4 oz).[4][5] Its use as a food originated in Mexico, and spread throughout the world following the Spanish colonization of the Americas.</aside>
+				</article>
+			</section>
+			<section>	
+				<h2>Fun Fact</h2>
+				<article>
+					<h3>Types of Lists</h3>
+					<ul id="uoListTypes">	
+						<li>Unordered</li>
+						<li>Ordered</li>
+						<li>Definition</li>
+					</ul>
+					<ol id="oListTypes">
+						<li> Harry Potter	
+							<ol id="oListIndent">
+								<li>and the sorcerer's stone</li>
+								<li>and the chamber of secrets</li>
+								<li>and the prisoner of azkaban</li>
+								<li>and the goblet of fire</li>
+								<li>and the order of phoenix</li>
+								<li>and the half blood prince</li>
+								<li>and the deathly hallows</li>
+							</ol>
+						</li>
+						<li>The very hugry Caterpillar</li>
+					</ol>
+
+					<!-- definition List-->
+					<dl>
+						<dt><dfn>jump:<dfn></dt>
+						<dd>to push your knees on the ground to defy gravity for a moment</dd>
+					</dl>
+
+				</article>
+			</section>
+
+			<section>
+				<h2>Fun Fact</h2>
+				<article>
+					<h3>Tables</h3>
+					<table id="tableData">
+						<caption>BaseBall</caption>
+
+						<thead>
+							<tr>
+								<td colspan="4">Best BaseBall players</td>
+							</tr>
+						</thead>
+
+						<tfoot>
+							<tr>
+								<td colspan="4">* Hall of fame</td>
+							</tr>
+						</tfoot>
+
+						<tbody>
+							<tr>
+								<td></td>
+								<td>Average</td>
+								<td>RBIs</td>
+								<td>HomeRuns</td>
+							</tr>
+
+							<tr>
+								<td>*Hank Aaron</td>
+								<td>.305</td>
+								<td>2297</td>
+								<td>755</td>
+							</tr>
+
+							<tr>
+								<td>*Hank Aaron</td>
+								<td>.305</td>
+								<td>2297</td>
+								<td>755</td>
+							</tr>
+
+							<tr>
+								<td>Hank Aaron</td>
+								<td>.305</td>
+								<td>2297</td>
+								<td>755</td>
+							</tr>
+						</tbody>
+					</table>					
+				</article>
+			</section>
+		</main>
+
+		<!-- footer section comes after main -->
+		<footer>
+			<!-- a way to contact the creator -->
+			<address>joshk.bits@gmail.com</address>
+			<small>copyrights 2016</small>
+		</footer>
+		
+		<a id="pagebottom"><br>
+	</div>
+	
+
+	<div id="form-wrapper">
+		<form method="GET" action="phpscript.php">
+			your name: <input type="text" name="name" size="50" maxlength="50"></input>
+			your password: <input type="password" name="password"></input>
+			your history:<br>
+			<textarea name="history" rows="20" cols="50">some random words</textarea>
+			
+			<fieldset>
+				<legend>Hobbies</legend>
+				programming <input type="checkbox" name="cbProgramming" value="Programming"></input>
+				running <input type="checkbox" name="cbRunning" value="Running"></input>
+			</fieldset>
+
+			<fieldset>
+				<legend>Hobbies</legend>
+				programming <input type="radio" name="skill" value="Programming" checked></input>
+				running <input type="radio" name="skill" value="Running"></input>
+			</fieldset>
+
+			Favorite Number:
+			<select>
+				<option value="PI">pi (3.14)</option>
+				<option value="EulersNum">Euler's Number (2.718)</option>
+				<option value="GoldenRatio">Golden Ratio</option>
+			</select>
+
+			Favorite Hero
+			<select>
+				<optgroup label="marvel">
+					<option value="spiderman">Spiderman</option>
+					<option value="wolverine">Wolverine</option>
+				</optgroup>
+				<optgroup label="DC">
+					<option value="flash">Flash</option>
+					<option value="spiderman">Batman</option>
+				</optgroup>
+			</select>
+
+			<!-- If you want to pass hidden info like browser being used or IP adress | we have to use javascript to assign value-->
+			<input type="hidden" name="browser" id="browser"></input>
+			<input type="file" name="upload"></input>
+			<input type="image" alt="logo" src=""></input>
+
+			<input type="submit" name="submit" value="Submit"></input>
+			<input type="reset" value="Reset"></input>
+		</form>
+	</div>
+
+	<div id="canvas-wrapper">
+		<!-- area to paint shapes write text etc -->
+		<canvas id="canvas" width="500" height="800"></canvas>
+		<script type="text/javascript">
+			function init(){
+				var canvas = document.getElementById('canvas');
+				if(canvas.getContext){
+					var ctx = canvas.getContext('2d');
+					
+					//canvas
+					ctx.fillStyle = '#FAEBD7';
+					ctx.fillRect(0, 0, canvas.width, canvas.height);
+					
+					//rectangle
+					ctx.fillStyle = '#AF002A';
+					ctx.fillRect(100, 100, 50, 50);
+
+					//rectangle stroke
+					ctx.lineWidth = 5;
+					ctx.strokeStyle = '#A4C639';
+					ctx.strokeRect(100, 100, 50, 50);
+
+					//circle
+					ctx.fillStyle = '#00308F';
+					ctx.beginPath();
+					ctx.arc(200, 200, 50, 0, Math.PI*2, true);
+					ctx.fill();
+
+					//polygon
+					ctx.fillStyle = '#3B444B';
+					ctx.beginPath();
+					ctx.moveTo(350, 200);
+					ctx.lineTo(400, 50);
+					ctx.lineTo(450, 200);
+					ctx.closePath();
+					ctx.fill();
+
+					//polygon stroke
+					ctx.strokeStyle = '#3B444B';
+					ctx.beginPath();
+					ctx.moveTo(350, 200);
+					ctx.lineTo(400, 50);
+					ctx.lineTo(450, 200);
+					ctx.closePath();
+					ctx.stroke();
+				}
+			}
+			onload = init;
+		</script>
+	</div>
+
+	<div id="storeData">
+		<p id="notify"></p>
+
+		<input type="text" id="yourName" size="50"></input>
+		<button onclick="setName()">Store</button>
+		<button onclick="getName()">Get</button>
+		<button onclick="removeName()">Remove</button>
+
+		<script type="text/javascript">
+			function init(){
+				if(navigator.geolocation){
+					document.getElementById('notify').innerHTML = 'We are trying to find you';
+					navigator.geolocation.getCurrentPosition(successFunc, errorFunc);
+				}
+				else{
+					document.getElementById('notify').innerHTML = "your browser doesn't support GEO location";
+				}
+			}
+			window.onload = init;
+
+			var successFunc = function(pos){
+				var lat = pos.coord.latitude;
+				var long = pos.coord.longitude;
+				document.getElementById('notify').innerHTML = "your are at Lat:" + lat + " Long:" + long;
+			}
+
+			var errorFunc = function(pos){
+				document.getElementById('notify').innerHTML = "Error";
+			}
+
+			function setName(){
+				var userName = document.getElementById('yourName').value;
+				if(userName === "") return false;
+				localStorage.setItem("name", userName);
+				document.getElementById('yourName').value = "Name Saved";
+			}
+
+			function getName(){
+				if(localStorage.getItem("name") === null) return false;
+				document.getElementById("yourName").value = "name stored: " + localStorage.getItem("name");
+			}
+
+			function removeName(){
+				if(localStorage.getItem("name") === null) return false;
+				localStorage.removeItem("name");
+				document.getElementById("yourName").value = "Name Removed";
+			}
+		</script>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
