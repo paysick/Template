@@ -12,7 +12,7 @@
 	<meta name="robots" content="index, follow"/>
 	<script type="text/javascript" src="someJavascriptFile.js"></script>
 	<!-- define the default location for all the links on your page | make sure to put this tag before defining any other links-->
-	<base href="http://localhost:8080/html/"></base>
+	<base href="http://localhost:8080/html/"/>
 	<!-- link to reference for stylesheet -->
 	<link rel="stylesheet" type="text/css" href="styles.css"/>
 	<!-- link for a icon on your browser tab | make sure to keep the file in base directory-->
@@ -33,8 +33,6 @@
 		<h1>change with a click</h1>
 		<!-- <p> tag gives two returns whereas <br> tag gives one return-->
 		<p>Twinkle Twinkle little star<br>how I wonder what you are<br>up above the world so high<br>like a diamond in the sky</p>
-		<!-- for a horizontal line use hl -->
-		<hl>
 		<!-- if you want to indent text use blockqoute | use cite attribute to give a citation-->
 		<blockquote cite="https://www.youtube.com/watch?v=kDyJN7qQETA">some random blockqoute text for template purpose</blockquote>
 		<!-- for putting your text inside a qoute -->
@@ -53,7 +51,7 @@
 					public static void main(String args[]){
 						Scanner in = new Scanner(System.in);
 						int n = in.nextInt();
-						for(int i=0; i &lt n; i++){
+						for(int i=0; i&lt;n; i++){
 							System.out.print(n + " ");
 						}
 					}
@@ -112,15 +110,15 @@
 		<br>
 		
 		<!-- use gimp tool to put hyperlinks to the images-->
-		<img 	id="puppy" 
+		<img 	id="puppy1" 
 				src="http://cdn1-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-2.jpg"
 				width="237"
 				height="178"
 				alt="bull pup"
 				usemap="#map" /><br>
 		<map name="map">
-			<area shape="" coords="" alt="" href="" title=""/></area>
-			<area shape="" coords="" alt="" href="" title=""></area>
+			<area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun" title="Sun">
+  			<area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury" title="Mercury">
 		</map>
 
 		<!-- to embed any type of file in the html-->
@@ -159,8 +157,7 @@
 		       width="300"
 		       height="120"
 		       loop="false"
-		       quality="high">
-		</embed>
+		       quality="high"/>
 
 		<!-- embed audio using audio tag... we can set attributes without values-->
 		<audio controls autoplay loop preload>
@@ -178,7 +175,7 @@
 			<a href="http://localhost/html5/html52.html">
 				<img id="websiteLogo"
 					 alt="New Think Tank Logo"
-				     src="C:\Users\Josh\Pictures\BITS_logo.png">
+				     src="C:/Users/Josh/Pictures/BITS_logo.png">
 			</a>
 			<h1>New Think Tank</h1>
 		</header>
@@ -228,7 +225,7 @@
 
 					<!-- definition List-->
 					<dl>
-						<dt><dfn>jump:<dfn></dt>
+						<dt><dfn>jump:</dfn></dt>
 						<dd>to push your knees on the ground to defy gravity for a moment</dd>
 					</dl>
 
@@ -295,27 +292,29 @@
 			<small>copyrights 2016</small>
 		</footer>
 		
-		<a id="pagebottom"><br>
+		<a id="pagebottom"></a><br>
 	</div>
-	
+
+	<!-- for a horizontal line use hl 
+	<hl></hl> -->
 
 	<div id="form-wrapper">
 		<form method="GET" action="phpscript.php">
-			your name: <input type="text" name="name" size="50" maxlength="50"></input>
-			your password: <input type="password" name="password"></input>
+			your name: <input type="text" name="name" size="50" maxlength="50">
+			your password: <input type="password" name="password">
 			your history:<br>
 			<textarea name="history" rows="20" cols="50">some random words</textarea>
 			
 			<fieldset>
 				<legend>Hobbies</legend>
-				programming <input type="checkbox" name="cbProgramming" value="Programming"></input>
-				running <input type="checkbox" name="cbRunning" value="Running"></input>
+				programming <input type="checkbox" name="cbProgramming" value="Programming">
+				running <input type="checkbox" name="cbRunning" value="Running">
 			</fieldset>
 
 			<fieldset>
 				<legend>Hobbies</legend>
-				programming <input type="radio" name="skill" value="Programming" checked></input>
-				running <input type="radio" name="skill" value="Running"></input>
+				programming <input type="radio" name="skill" value="Programming" checked>
+				running <input type="radio" name="skill" value="Running">
 			</fieldset>
 
 			Favorite Number:
@@ -338,12 +337,12 @@
 			</select>
 
 			<!-- If you want to pass hidden info like browser being used or IP adress | we have to use javascript to assign value-->
-			<input type="hidden" name="browser" id="browser"></input>
-			<input type="file" name="upload"></input>
-			<input type="image" alt="logo" src=""></input>
+			<input type="hidden" name="browser" id="browser">
+			<input type="file" name="upload">
+			<input type="image" alt="logo" src="logo.jpg">
 
-			<input type="submit" name="submit" value="Submit"></input>
-			<input type="reset" value="Reset"></input>
+			<input type="submit" name="submit" value="Submit">
+			<input type="reset" value="Reset">
 		</form>
 	</div>
 
@@ -401,7 +400,7 @@
 	<div id="storeData">
 		<p id="notify"></p>
 
-		<input type="text" id="yourName" size="50"></input>
+		<input type="text" id="yourName" size="50">
 		<button onclick="setName()">Store</button>
 		<button onclick="getName()">Get</button>
 		<button onclick="removeName()">Remove</button>
