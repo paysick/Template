@@ -111,3 +111,201 @@ http://www.newthinktank.com/2014/04/git-video-tutorial/
 
 
 
+
+/**
+*GITHUB
+*
+*/
+
+//push an existing directory from local system to repo | first add remote repo | then push files to it
+>git remote add origin https://github.com/paysick/Template.git
+>git push -u origin master
+
+//To stage the entire directory
+>git add .
+
+//to list all the remote repository urls
+>git remote -v
+
+//to fetch the data from remote without merging it to the files in local system
+>git fetch origin
+
+//to pull the data from remote repo and merge with all the changes
+>git pull https://github.com/paysick/Template.git
+
+//to push a file to github after changing, staging and commiting a file in local system
+>git push
+
+
+/*TAGS
+//to change the name origin
+>git remote rename origin sf
+
+//Tags are used to tag state of files at particular instance
+//to see all tags
+>git tag
+
+//to add a tag
+>git tag v0.2 -m 'version 0.2'
+
+//to see the details of a tag
+>git show v0.2
+
+//to add tag to a previous commit
+>git log
+>/*copy the hash code of the commit that you wanna tag*/
+>git  tag -a v0.5 <hash code>
+>/*this will popup the editor ... write comments and save*/
+
+//to push a particular tag to github
+>git push origin v0.5
+
+//to push all the tags at once | they will show up in releases in github
+>git push origin --tags
+
+
+
+/*ALIASES
+//to change the name of a command to somehthing else | in this case commit --> co
+>git config --global user.co commit
+>git co -m "commit --> co works"
+
+
+/*CLONE
+to clone a repository
+-go to the repository in github
+-fork it
+-copy the clone url
+-in the terminal type
+>git clone https://github.com/derekbanas/pacman.git
+
+
+
+
+/*TREES and BRANCHES
+//to create a branch - method 1 | checkout to switch to the new branch
+>git branch fix20
+>git checkout fix20
+
+//to create a branch - method 2
+git checkout -b fix20
+>/*all commits will happen in the branch*/
+
+//to go back to master branch
+>git checkout origin
+
+//to push branch over to github
+>git push origin fix20
+
+//this command will only give a reference to the branch and won't load all files
+>git checkout origin
+
+//to get a branch
+>git checkout -b fix20 origin/fix20
+
+//to see all the branches
+>git branch
+
+//to see all merged branches
+>git branch --merged
+
+//to see all unmerged branches
+>git branch --no-merged
+
+//to see all branches and last commit
+>git branch -v
+
+//to merge a branch to the master branch
+>git merge fix20
+
+//to delete a merged branch | typically we won't need a branch after it is merged
+>git branch -d fix20
+
+//to delete an unmerged branch | the difference is -d --> -D
+>git branch -D fix20
+
+//to delete a branch from github | deleting a branch in local system won't delete it in github
+>git push origin :fix20
+
+//change branch name
+>git branch -m newBranchName
+
+
+
+/*RESOLVING MERGE CONFLICTS
+*case*
+>git checkout -b fix21
+>vim AndroidManifest.xml
+>/*changed comment 2 --> 3*/
+>git commit -a -m "changed comment to 3"
+>git checkout master
+>
+>git checkout -b "hofix"
+>vim AndroidManifest.xml
+>/*changed comment 2-->4*/
+>git commit -a -m "changed comment to 4"
+>git checkout master
+>git merge hotfix
+>git branch -d hotfix
+>
+>git checkout fix21
+>git checkout master
+>git merge fix21
+>*CONFLICT*
+
+solution
+-delete the branch fix21
+-or download mergetool
+>git mergetool
+-choose the version of code
+-goto file and save merge
+-done
+
+
+/*REBASE
+rule: never rebase to a commit that has been made public
+//if we make changes to a different file in the master ... our previous branches won't have the changes reflected as they are branched from previous versions of master... so to rebase the branch to current version of master
+>git checkout fix22
+>git rebase master
+
+
+
+/*REVERTING vs RESETTING
+-revert creates a new commit which is opposite of the previous commit ... so basically undo .. but we know an undo has been done
+-reset is completely deleting the commit ... so we won't know if an undo had been done
+
+//reverting
+>git revert HEAD
+
+//resetting
+//to reset the staging area to most recent commit ... working directory won't be affected
+>git reset
+
+//to move to previous commit ... remove files from staging area ... working directory won't be affected
+>git reset aCommit
+
+//to reset the staging area and wokring directory to match most recent commit
+>git reset --hard
+
+//to reset the staging area and wokring directory to previous commit
+>git reset --hard aCommit
+
+//git clean to remove the untracked files from directory ... NOT a good practice
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
