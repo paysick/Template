@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Upload</title>
+</head>
+<body>
+	<div id="uploaded"></div>
+	<div id="upload_progress"></div>
+	<div>
+		<form action="C:\Users\Josh\Desktop\file_upload" method="POST" enctype="multipart/form-data">
+			<div>
+				<input id="file" type="file" name="file" multiple="multiple"></input>
+				<input id="submit" type="submit" value="upload"></input>
+			</div>
+		</form>
+		<script type="text/javascript">
+			window.addEventListener("load", function(event){
+				document.getElementById("submit").addEventListener("click", function(event){
+					console.log("click event triggered");
+					event.preventDefault();
+					event.stopPropagation();
+					var files = document.getElementById("file").files;
+				    var data = new FormData();
+				    var data_HTML = "";
+					for(var i=0; i<files.length; i++){
+						data.append(files[i].name, files[i]);
+						data_HTML += files[i].name +"<br>";
+					}
+					document.getElementById("uploaded").innerHTML = data_HTML;
+
+					var request = new XMLHttpRequest();
+					request.upload.addEventListener("progress", function(event){
+						console.log("progress event triggered");
+						if(event.lengthComputable){
+							console.log("in progress");
+							var progress = document.getElementById("upload_progress");
+							var percent = Math.round(event.loaded/event.total)*100 + " %";
+							while(progress.hasChildNodes()){
+								progress.removeChild(progress.firstChild);
+							}
+							progress.appendChild(document.createTextNode(progress));	
+						}
+					});
+
+					request.upload.addEventListener("load", function(event){
+						document.getElementById("upload_progress").style.display = "none";
+						console.log("loaded");
+					});
+
+					request.upload.addEventListener("error", function(event){
+						console.log("upload failed");
+					});
+					
+					request.open("POST", "");
+					request.setRequestHeader("Cache-Control", "no-cache");
+					document.getElementById("upload_progress").style.display = "block";
+					request.send();
+				})
+			})
+		</script>
+	</div>
+</body>
+</html>
